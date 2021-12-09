@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>DJANGO</title>
+</head>
+<body>
+    <section>
+        <h1 class="layout text-center display-4 ">Django</h1>
+        <p class="layout text-center">  Lista de comandos para utilizar Django: </p>
+        <ol>
+            <li>
+                Visita el sitio oficial haciendo click  <a href="https://www.djangoproject.com/">aqui</a>  
+            </li>
+            <li>
+                Antes que nada tenemos que tener Python instalado. Abrir la Terminal de nuestro sistema o de VSC.
+            </li>
+            <li>
+                Instalando Django:
+                <ul>
+                    Con Windows, podemos instalarlo bajo el comando <strong>pip install Django​</strong> 
+                </ul>
+                <ul>
+                    Para comprobar si se instaló correctamente, escribimos <strong>python</strong>
+                </ul>
+                <ul>
+                    Luego <strong>import django</strong>, y por último <strong>django.VERSION </strong> 
+                </ul>
+            </li>
+
+            <li>
+                Para crear un proyecto:
+                <ul>
+                    Crear una carpeta nueva. Nombrarla <strong> PythonProyecto1​</strong>, por ejemplo.
+                </ul>
+                <ul>
+                    Iniciar VSC o tu editor ( o incluso cmd) y pararte en esa carpeta. 
+                </ul>
+                <ul>
+                    Escribir <strong> django-admin startproject Proyecto1 </strong>
+                </ul>
+                <ul>
+                    Donde <strong>Proyecto1</strong> será una nueva carpeta que se creará en <strong>PythonProyecto1</strong>.
+                </ul>
+                 <ul>
+                    Con este último comando se creará una carpeta y un archivo <strong>manage.py</strong>
+                </ul>
+                <ul>
+                    Nos paramos en nuestro proyecto, <strong>Proyecto1</strong>, <strong>cd Proyecto1</strong> 
+                </ul>
+                <ul>
+                   Tipeamos <strong> python manage.py migrate</strong>
+                </ul>
+                <ul>
+                   Verificamos con: <strong>​ python manage.py runserver</strong> para iniciar el servidor.
+                </ul>
+            </li>
+            <li>
+                Para crear una aplicación:
+                <ul>
+                    Crear proyecto:<strong>django-admin startproject ProyectoCoder </strong>
+                </ul>
+                <ul>
+                    Entramos al proyecto con <strong>cd ProyectoCoder</strong> 
+                </ul>
+                <ul>
+                    Creamos la app: <strong>python manage.py startapp AppCoder</strong>
+                </ul>
+            </li>
+            <li>
+                Para crear un modelo:
+                <ul>
+                    Vamos a <strong>models.py</strong> que se encuentra en nuestra aplicación.
+                </ul>
+                <ul>
+                    Vamos a <strong>settings</strong>,​ <strong>INSTALLED_APPS</strong> y agregamos nuestra APP.​
+                </ul>
+                <ul>
+                    Verificamos si se creo la base de datos correctamente: <strong>python manage.py check AppCoder​</strong>
+                </ul>
+            </li>
+            <li>
+                Para crear la estructura de la base de datos:
+                <ul>
+                    <strong>python manage.py sqlmigrate AppCoder 0001</strong> 
+                </ul>
+                <ul>
+                    <strong>python manage.py migrate</strong>   
+                </ul>
+                
+            </li>
+            <li>
+                Instalando DB Browser:
+                <ul>
+                    Visita el sitio oficial haciendo click  <a href="https://sqlitebrowser.org/dl/">aqui</a> 
+                </ul>
+            </li>
+            <li>
+                Agregar información a mi base de datos:
+                <ul>
+                    En la Terminal escribimos <strong>python manage.py shell</strong>
+                </ul>
+                <ul>
+                    Luego vamos a importar el modelo, en este caso la clase Curso:  <strong>from AppCoder.models import Curso​</strong>
+                </ul>
+                <ul>
+                    Creamos un Curso:​  <strong>curso =Curso(nombre="Python", camada=23800)​</strong>
+                </ul>
+                <ul>
+                    Guardamos el Curso en nuestra base de datos: <strong>curso.save()</strong>
+                </ul>
+            </li>
+            <li>
+                Al hacer un cambio en el modelo  SIEMPRE debemos hacer las migraciones:
+                <ul>
+                    <strong>python manage.py makemigrations</strong>
+                </ul>
+                <ul>
+                    <strong>python manage.py migrate​</strong>
+                </ul>
+                <ul>
+                    Suele ser útil cuando uno genera cambios muy grandes en el modelo borrar la base de datos y volverla a crear.
+                </ul>
+                <ul>
+                    En el caso que en algún momento deban hacer eso, es necesario recordar que tendrán que generar otro superusuario.​                
+                </ul>
+                <ul>
+                    Debiendo crear un username, password y email.
+                </ul>
+                <ul>
+                    <strong>python manage.py createsuperuser​</strong>
+                </ul>
+                
+            </li>
+            <li>
+                Control de versiones:
+                <ul>
+                <strong>pip install -r requirements.txt</strong>
+                </ul>
+            </li>
+
+
+        </ol>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</body>
+<footer class= "layout text-center">
+    <p>Desarrollado por <a href="https://www.linkedin.com/in/diego-ariel-simonelli-87b8b986/">Diego Simonelli </a> ©</p> 
+ </footer>
+</html>
